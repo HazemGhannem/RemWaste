@@ -1,27 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { getSkips } from "../api/skipService";
+import React, { useState } from "react";
 import Card from "../components/Card";
 import { Skip } from "../types/Type";
 import SelectedAlert from "../components/SelectedAlert";
 import NavBar from "../components/NavBar";
+import { useFetch } from "../hooks/useFetch";
+import Loader from "../components/Loader";
 
 const SelectSkip = () => {
-  const [skips, setSkipes] = useState([]);
   const [selectedSkip, setSelectedSkip] = useState<Skip | null>(null);
-  useEffect(() => {
-    getSkips()
-      .then(setSkipes)
-      .catch((err) => console.error(err));
-  }, []);
-const handleSelect = (skip: Skip) => {
-  if (!skip.allows_heavy_waste) return;
+  const { skips, loading, error } = useFetch();
 
-  if (selectedSkip?.id === skip.id) {
-    setSelectedSkip(null);
-  } else {
-    setSelectedSkip(skip);
-  }
-};
+  const handleSelect = (skip: Skip) => {
+    if (!skip.allows_heavy_waste) return;
+
+    if (selectedSkip?.id === skip.id) {
+      setSelectedSkip(null);
+    } else {
+      setSelectedSkip(skip);
+    }
+  };
 
   return (
     <section className="max-w-7xl mx-auto px-4 py-8">
@@ -33,6 +30,10 @@ const handleSelect = (skip: Skip) => {
         <p className="text-gray-400 text-center mb-8">
           Select the skip size that best suits your needs
         </p>
+        {loading && <Loader />}
+        {error && (
+          <p className="text-red-500 text-center mb-8">error fetching data</p>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {skips.map((skip: Skip) => (
             <Card

@@ -40,7 +40,8 @@ const Card: React.FC<CardProps> = ({ skip, onSelect, selected }) => {
           className="w-full h-36 md:h-48 object-cover rounded-md mb-4"
           src="https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/5-yarder-skip.jpg"
           alt={`${size} Yard Skip`}
-          loading="eager"
+          loading="eager" 
+          fetchPriority="high"
         />
         <div className="absolute top-3 right-2 z-20 bg-[#0037C1] text-white px-3 py-1 rounded-full text-sm font-medium shadow-md">
           {size} Yards
