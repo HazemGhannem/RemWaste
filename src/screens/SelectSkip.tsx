@@ -29,7 +29,7 @@ const SelectSkip = () => {
   return (
     <section className="max-w-8xl mx-auto px-4 py-8">
       <NavBar />
-      <div className="border-t-2 border-b-2 border-brand-grayText py-6 mb-8 w-full bg-[#FFA500] opacity-70">
+      <div className="border-t-2 border-b-2 border-brand-grayText py-6 mb-8 w-full bg-brand-orange">
         <h2 className="text-2xl font-bold text-center mb-4 text-white">
           Choose Your Skip Size
         </h2>
