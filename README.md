@@ -77,6 +77,7 @@ The project uses **Tailwind CSS** for styling, chosen for its flexibility and ra
 ## Conclusion
 
 This project focuses on maintainability, flexibility, and performance. It combines modern React best practices with Tailwind CSS’s utility-first styling to deliver an engaging and responsive user interface for skip size selection.
+![Performance](https://github.com/user-attachments/assets/690b8dce-0ce4-4d95-99f7-d56259f97829)
 
 ---
 
