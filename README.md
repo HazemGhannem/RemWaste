@@ -1,46 +1,84 @@
-# Getting Started with Create React App
+# Skip Selector Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is a responsive Skip Size Selector web app built with React and Tailwind CSS. It allows users to choose from different skip sizes with an intuitive card/list toggle view, enhanced with animations, lazy loading, and skeleton loading indicators to ensure smooth performance and a great user experience.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **assets/**  
+  Contains all SVG components used as icons and illustrations. Using SVG components instead of static images provides more flexibility, easier styling, and better performance.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **api/**  
+  Houses service hooks for data fetching, keeping data logic separated and reusable.
 
-### `npm test`
+- **types/**  
+  Defines TypeScript types such as `Skip` to ensure type safety across the project.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **components/**  
+  Contains reusable UI components like Navbar, Buttons, Animations, Loaders, and Skeletons to promote code reuse and maintainability.
 
-### `npm run build`
+- **cards/**  
+  Split into three components: one for card view, one for list view, and a parent component that handles the toggle and animations between views.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Styling & Responsiveness
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The project uses **Tailwind CSS** for styling, chosen for its flexibility and rapid development capabilities.  
+- Layouts and font sizes use `rem` and percentages for fluid and scalable design.  
+- Tailwind’s responsive breakpoints (`sm`, `md`, `lg`, etc.) ensure the UI adapts seamlessly to mobile phones and desktop browsers.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Features
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Card/List Toggle View:**  
+  Users can switch between a card grid and list layout with smooth animations for better usability.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Animations:**  
+  Subtle animations on cards, alerts, and counters improve the user experience and visual feedback.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **Lazy Loading & Skeletons:**  
+  Components such as cards are lazy-loaded to improve initial load times. Skeleton loaders display placeholders during data fetching, enhancing perceived performance.
 
-## Learn More
+- **Performance Icon:**  
+  A small icon indicates loading or performance status, keeping users informed.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Development Workflow
+
+1. **Setup:**  
+   Initialized the React project and configured Tailwind CSS for styling.
+
+2. **Component Design:**  
+   Created reusable components (Navbar, Buttons, Cards, Skeletons) for scalability.
+
+3. **SVG as Components:**  
+   Converted SVG assets into React components for better control over styling and interactivity.
+
+4. **Data Fetching:**  
+   Built custom hooks in the `api/` folder to fetch skip data, enabling separation of concerns.
+
+5. **View Modes & Animation:**  
+   Implemented the toggle between card and list views using state management with React, enhanced with Tailwind animations.
+
+6. **Performance Enhancements:**  
+   Added lazy loading with `React.lazy` and dynamic imports, and skeleton loaders for asynchronous content.
+
+7. **Testing & Responsiveness:**  
+   Tested on multiple screen sizes and browsers to ensure consistent, responsive behavior.
+
+---
+
+## Conclusion
+
+This project focuses on maintainability, flexibility, and performance. It combines modern React best practices with Tailwind CSS’s utility-first styling to deliver an engaging and responsive user interface for skip size selection.
+
+---
+
+
+

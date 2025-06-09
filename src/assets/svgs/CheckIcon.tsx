@@ -5,7 +5,7 @@ type CheckIconProps = React.SVGProps<SVGSVGElement> & {
 };
 
 const CheckIcon: React.FC<CheckIconProps> = ({
-  color = "#0037C1",
+  color = "#fff",
   ...props
 }) => (
   <svg

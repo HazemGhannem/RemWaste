@@ -8,56 +8,60 @@ const SelectedAlert: React.FC<SelectedAlertProp> = ({ selectedSkip }) => {
   const { size, price_before_vat, vat, hire_period_days } = selectedSkip;
   const priceWithVat = (price_before_vat * (1 + vat / 100)).toFixed(0);
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-[#1C1C1C] border-t border-[#2A2A2A] p-4 animate-slideUp z-50">
+    <div className="fixed bottom-0 left-0 right-0 bg-brand-grayFooter border-t p-5 z-50 shadow-lg animate-slideUpFade">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-3 text-xs text-gray-400 text-center leading-snug">
+        <p className="mb-4 text-xs text-white text-center leading-snug tracking-wide">
           Imagery and information shown throughout this website may not reflect
-          the exact shape or size specification, colours may vary, options
-          and/or accessories may be featured at additional cost.
-        </div>
+          the exact shape, size specification, or colors. Options and
+          accessories may be featured at additional cost.
+        </p>
+
+        {/* Mobile View */}
         <div className="lg:hidden">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="font-medium">{size} Yard Skip</h3>
-            <div>
-              <span className="text-xl font-bold text-[#0037C1]">
-                £ {priceWithVat}
-              </span>
-              <span className="text-sm text-gray-400 ml-2">
-                {hire_period_days}
-                days
-              </span>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <button className="bg-[#2a2a2a] hover:bg-[#373737] text-white font-semibold py-2 px-4 rounded gap-2 w-full">
-              Back
-            </button>
-            <button className="rounded-md bg-[#0037C1] px-4 py-2 text-white transition-colors duration-150 hover:bg-[#002da1] ">
-              Continue
-            </button>
-          </div>
-        </div>
-        <div className="hidden lg:flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <div>
-              <p className="text-sm text-gray-400">{size} Yard Skip</p>
-            </div>
-            <div>
-              <span className="text-2xl font-bold text-[#0037C1]">
+          <div className="flex items-center justify-between mb-5">
+            <h3 className="font-semibold text-lg text-white">
+              {size} Yard Skip
+            </h3>
+            <div className="flex items-baseline gap-3">
+              <span className="text-2xl font-extrabold text-brand-green">
                 £{priceWithVat}
               </span>
-              <span className="text-sm text-gray-400 ml-2">
-                {hire_period_days} day hire
+              <span className="text-sm text-gray-400">
+                {hire_period_days} days
               </span>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <button className="bg-[#2a2a2a] hover:bg-[#373737] text-white font-semibold py-2 px-4 rounded flex items-center gap-2">
+
+          <div className="grid grid-cols-2 gap-4">
+            <button className="bg-[#75777b] hover:bg-[#acabab] text-white font-semibold py-3 rounded-md shadow-inner transition duration-200 ease-in-out">
               Back
             </button>
-            <button className="rounded-md bg-[#0037C1] px-4 py-2 text-white transition-colors duration-150 hover:bg-[#002da1] flex items-center gap-2">
+            <button className="bg-brand-orange hover:bg-brand-green text-white font-semibold py-3 rounded-md shadow-lg transition duration-200 ease-in-out">
               Continue
-              <Arrow />
+            </button>
+          </div>
+        </div>
+
+        {/* Desktop View */}
+        <div className="hidden lg:flex items-center justify-between">
+          <div className="flex items-center gap-8">
+            <p className="text-sm text-white tracking-wide">{size} Yard Skip</p>
+            <span className="text-3xl font-extrabold text-brand-green">
+              £{priceWithVat}
+            </span>
+            <span className="text-sm text-white">
+              {hire_period_days} day hire
+            </span>
+          </div>
+
+          <div className="flex items-center gap-6">
+            <button className="bg-[#75777b] hover:bg-[#acabab] text-white font-semibold py-3 px-6 rounded-md shadow-inner flex items-center gap-3 transition duration-200 ease-in-out">
+              {/* You can add a left arrow icon here if needed */}
+              Back
+            </button>
+            <button className="bg-brand-orange hover:bg-[#0F4D0F] text-white font-semibold py-3 px-6 rounded-md shadow-lg flex items-center gap-3 transition duration-200 ease-in-out">
+              Continue
+              <Arrow className="w-5 h-5" />
             </button>
           </div>
         </div>

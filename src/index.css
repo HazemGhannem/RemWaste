@@ -4,8 +4,8 @@
 
 html, body, #root {
   min-height: 100vh;         
-  background-color: #121212; 
-  color: white;              
+  background-color: #fefefe; 
+  color: black;              
   margin: 0;       
   font-family: 'Inter', system-ui, sans-serif;     
 }
